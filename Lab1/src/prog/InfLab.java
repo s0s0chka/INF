@@ -23,7 +23,6 @@ public class InfLab {
 
         scn.close();
         
-        
         System.out.println(ConvertWithNumberBases(NumberToConvert, OldBase, NewBase));
     }
 }
