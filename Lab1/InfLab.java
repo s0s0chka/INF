@@ -1,5 +1,6 @@
 import java.util.Scanner;
-import src.packages.BaseConvert;
+
+import packages.BaseConvert;
 
 public class InfLab {
 

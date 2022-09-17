@@ -1,4 +1,4 @@
-package src.packages;
+package packages;
 
 public class BaseConvert {
     private static final String NUMBERS_AS_LETTERS = "0123456789ABCDEF";
