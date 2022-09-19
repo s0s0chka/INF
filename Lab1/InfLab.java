@@ -6,13 +6,11 @@ public class InfLab {
     public static String convertNumberBase(String numberToConvert, String oldBase, String newBase) {
         if(newBase.equals("fib")) {
             return BaseConvert.convertFromBaseTenToBaseFib(numberToConvert);
-        }
-        else if (oldBase.equals("10")){
+        } else if (oldBase.equals("10")){
             return BaseConvert.convertFromBaseTen(numberToConvert, Integer.parseInt(newBase));
         } else if (newBase.equals("10")) {
             return BaseConvert.convertToBaseTen(numberToConvert, Integer.parseInt(oldBase));
-        }
-        else {
+        } else {
             String temp = BaseConvert.convertToBaseTen(numberToConvert, Integer.parseInt(oldBase));
             return BaseConvert.convertFromBaseTen(temp, Integer.parseInt(newBase));
         }
