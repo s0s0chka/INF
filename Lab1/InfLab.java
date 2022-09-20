@@ -6,6 +6,8 @@ public class InfLab {
     public static String convertNumberBase(String numberToConvert, String oldBase, String newBase) {
         if(newBase.equals("fib")) {
             return BaseConvert.convertFromBaseTenToBaseFib(numberToConvert);
+        } else if (newBase.equals("fact")){
+            return BaseConvert.convertFromBaseTenToBaseFact(numberToConvert);
         } else if (oldBase.equals("10")){
             return BaseConvert.convertFromBaseTen(numberToConvert, Integer.parseInt(newBase));
         } else if (newBase.equals("10")) {
@@ -34,5 +36,4 @@ public class InfLab {
  * To do: 
  * Base -10 to 10
  * Base 9c to 10
- * Base 10 to fact
  */

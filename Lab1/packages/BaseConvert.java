@@ -109,4 +109,16 @@ public class BaseConvert {
         }
         return result;
     }
+
+    public static String convertFromBaseTenToBaseFact(String numberToConvert){
+        String result = "";
+        int numberToConvertInteger = Integer.parseInt(numberToConvert);
+        int divCounter = 2;
+        while (numberToConvertInteger > 0){
+            result += NUMBERS_AS_LETTERS.charAt(numberToConvertInteger % divCounter);
+            numberToConvertInteger /= divCounter;
+            divCounter++;
+        }
+        return reverseString(result);
+    }
 }
