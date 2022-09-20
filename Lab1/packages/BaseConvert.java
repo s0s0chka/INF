@@ -32,6 +32,7 @@ public class BaseConvert {
             int numberToConvertInteger = Integer.parseInt(parts[0]);
             double numberToConvertFractional = getFractionalPartFromString(parts[1]);
 
+            //do the integer part first and then the fractional
             while (numberToConvertInteger > 0) {
                 result += NUMBERS_AS_LETTERS.charAt(numberToConvertInteger % newBase);
                 numberToConvertInteger /= newBase;
@@ -48,7 +49,7 @@ public class BaseConvert {
                     numberToConvertFractional = fractionalPart;
                 }
             }
-        } else {
+        } else { //if not fractional
             int numberToConvertInteger = Integer.parseInt(numberToConvert);
             while (numberToConvertInteger > 0) {
                 result += NUMBERS_AS_LETTERS.charAt(numberToConvertInteger % newBase);
@@ -60,10 +61,11 @@ public class BaseConvert {
     }
 
     public static String convertToBaseTen(String numberToConvert, int OldBase){
-        if (numberToConvert.contains(",")){
+        if (numberToConvert.contains(",")){ //if fractional
             double result = 0;
             int indexO = numberToConvert.indexOf(",");
             int integerPartrtLength = numberToConvert.substring(0, indexO).length();
+            //do the integer part first and then the fractional
             for(int i = 0; i < integerPartrtLength; i++){
                 int CharAsBaseTenNumber = NUMBERS_AS_LETTERS.indexOf(numberToConvert.charAt(i));
                 result += CharAsBaseTenNumber * Math.pow(OldBase, integerPartrtLength - i - 1);
@@ -75,7 +77,7 @@ public class BaseConvert {
                 counter--;
             }
             return (Double.toString(result)).replace(".", ",");
-        } else {
+        } else { //if not fractional
             int result = 0;
             for(int i = 0; i < numberToConvert.length(); i++){
                 int CharAsBaseTenNumber = NUMBERS_AS_LETTERS.indexOf(numberToConvert.charAt(i));
@@ -91,6 +93,7 @@ public class BaseConvert {
         List<Integer> fib = new ArrayList<Integer>();
         fib.add(1);
         fib.add(2);
+        //generate all the fib numbers that are smaller than the numberToConvert
         while (fib.get(fib.size() - 1) < numberToConvertInteger) {
             fib.add(fib.get(fib.size() - 1) + fib.get(fib.size()-2));
         }
