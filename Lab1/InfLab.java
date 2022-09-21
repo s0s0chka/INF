@@ -8,6 +8,8 @@ public class InfLab {
             return BaseConvert.convertFromBaseTenToBaseFib(numberToConvert);
         } else if (newBase.equals("fact")){
             return BaseConvert.convertFromBaseTenToBaseFact(numberToConvert);
+        } else if (oldBase.contains("C")) {
+            return BaseConvert.convertFromSimBaseToBaseTen(numberToConvert, Integer.parseInt(oldBase.substring(0, oldBase.length()-1))); 
         } else if (oldBase.equals("10")){
             return BaseConvert.convertFromBaseTen(numberToConvert, Integer.parseInt(newBase));
         } else if (newBase.equals("10")) {
@@ -28,12 +30,5 @@ public class InfLab {
         scn.close();
         
         System.out.println(convertNumberBase(numberToConvert, oldBase, newBase));
-
     }
 }
-
-/*
- * To do: 
- * Base -10 to 10
- * Base 9c to 10
- */

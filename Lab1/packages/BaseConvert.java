@@ -121,4 +121,20 @@ public class BaseConvert {
         }
         return reverseString(result);
     }
+
+    public static String convertFromSimBaseToBaseTen(String numberToConvert, int oldBase){
+        int result = 0;
+        int currentNumber;
+        String numberToConterWithoutUnderscores = (numberToConvert.replace("_", ""));
+        for (int i = 0; i < numberToConterWithoutUnderscores.length(); i++){
+            if (numberToConvert.charAt(i) == '_'){
+                numberToConvert = numberToConvert.replaceFirst("_", "");
+                currentNumber = -Character.getNumericValue(numberToConvert.charAt(i));
+            } else{
+                currentNumber = Character.getNumericValue(numberToConvert.charAt(i));
+            }
+            result += currentNumber * Math.pow(oldBase, numberToConterWithoutUnderscores.length() -1 - i);
+        }
+        return Integer.toString(result);
+    }
 }
