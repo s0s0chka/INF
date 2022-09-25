@@ -1,15 +1,28 @@
+package src;
 import java.util.Scanner;
-import packages.BaseConvert;
+import src.packages.BaseConvert;
 
 public class InfLab {
 
-    public static String convertNumberBase(String numberToConvert, String oldBase, String newBase) {
+    public static String convertNumberBase() {
+
+        Scanner scn = new Scanner(System.in);
+
+        System.out.print("Number to convert: ");
+        String numberToConvert = scn.nextLine();
+        System.out.print("Initial base: ");
+        String oldBase = scn.nextLine();
+        System.out.print("New base: ");
+        String newBase = scn.nextLine();
+
+        scn.close();
+
         if(newBase.equals("fib")) {
             return BaseConvert.convertFromBaseTenToBaseFib(numberToConvert);
         } else if (newBase.equals("fact")){
             return BaseConvert.convertFromBaseTenToBaseFact(numberToConvert);
         } else if (oldBase.contains("C")) {
-            return BaseConvert.convertFromSimBaseToBaseTen(numberToConvert, Integer.parseInt(oldBase.substring(0, oldBase.length()-1))); 
+            return BaseConvert.convertFromSymBaseToBaseTen(numberToConvert, Integer.parseInt(oldBase.substring(0, oldBase.length()-1))); 
         } else if (oldBase.equals("10")){
             return BaseConvert.convertFromBaseTen(numberToConvert, Integer.parseInt(newBase));
         } else if (newBase.equals("10")) {
@@ -21,14 +34,6 @@ public class InfLab {
     }
 
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-
-        String numberToConvert = scn.nextLine();
-        String oldBase = scn.nextLine();
-        String newBase = scn.nextLine();
-
-        scn.close();
-        
-        System.out.println(convertNumberBase(numberToConvert, oldBase, newBase));
+        System.out.printf("-- FINAL RESULT: %s --\n", convertNumberBase());
     }
 }
