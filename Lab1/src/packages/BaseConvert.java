@@ -48,7 +48,7 @@ public class BaseConvert {
             result = reverseString(result) +  ",";
             System.out.println("Converting the fractional part: ");
             System.out.print("|");
-            while(numberToConvertFractional != 0){
+            for(int i = 0; (i < 4) && (numberToConvertFractional != 0); i++){
                 numberToConvertFractional *= newBase;
                 double fractionalPart = numberToConvertFractional % 1;
                 int integerPart = (int)(numberToConvertFractional - fractionalPart);
@@ -99,7 +99,7 @@ public class BaseConvert {
             System.out.println("Converting the fractional part: ");
             System.out.print("|");
             int counter = -1;
-            for (int i = indexO + 1; i < numberToConvert.length(); i++){
+            for (int i = indexO + 1; (i < 4) && (i < numberToConvert.length()); i++){
                 int CharAsBaseTenNumber = NUMBERS_AS_LETTERS.indexOf(numberToConvert.charAt(i));
                 System.out.printf(" %.2f |", CharAsBaseTenNumber * Math.pow(OldBase, counter));
                 result += CharAsBaseTenNumber * Math.pow(OldBase, counter);
