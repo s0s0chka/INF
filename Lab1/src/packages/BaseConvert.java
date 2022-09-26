@@ -43,6 +43,8 @@ public class BaseConvert {
                 System.out.printf(" %c |",NUMBERS_AS_LETTERS.charAt(numberToConvertInteger % newBase));
                 result += NUMBERS_AS_LETTERS.charAt(numberToConvertInteger % newBase);
                 numberToConvertInteger /= newBase;
+            } if (result == ""){
+                result += "0";
             }
             System.out.println();
             result = reverseString(result) +  ",";
@@ -99,14 +101,14 @@ public class BaseConvert {
             System.out.println("Converting the fractional part: ");
             System.out.print("|");
             int counter = -1;
-            for (int i = indexO + 1; (i < 4) && (i < numberToConvert.length()); i++){
+            for (int i = indexO + 1; i < numberToConvert.length(); i++){
                 int CharAsBaseTenNumber = NUMBERS_AS_LETTERS.indexOf(numberToConvert.charAt(i));
                 System.out.printf(" %.2f |", CharAsBaseTenNumber * Math.pow(OldBase, counter));
                 result += CharAsBaseTenNumber * Math.pow(OldBase, counter);
                 counter--;
             }
             System.out.println();
-            System.out.printf("Result: %s\n", (Double.toString(result)).replace(".", ","));
+            System.out.printf("Result: %s\n", String.format("%.4f", result).replace(".", ","));
             System.out.println("______________________________");
             return (Double.toString(result)).replace(".", ",");
         } else { //if not fractional
