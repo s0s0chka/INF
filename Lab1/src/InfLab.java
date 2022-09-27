@@ -14,7 +14,6 @@ public class InfLab {
         String oldBase = scn.nextLine();
         System.out.print("New base: ");
         String newBase = scn.nextLine();
-
         scn.close();
 
         if(newBase.equals("fib")) {
@@ -26,7 +25,9 @@ public class InfLab {
         } else if (oldBase.equals("10")){
             return BaseConvert.convertFromBaseTen(numberToConvert, Integer.parseInt(newBase));
         } else if (newBase.equals("10")) {
-            return BaseConvert.convertToBaseTen(numberToConvert, Integer.parseInt(oldBase));
+            String temp = BaseConvert.convertToBaseTen(numberToConvert, Integer.parseInt(oldBase));
+            int fractionalPartLength = temp.length() - (temp.indexOf("," + 1));
+            return (fractionalPartLength > 5) ? temp.substring(0, temp.indexOf(",") + 6) : temp;
         } else {
             String temp = BaseConvert.convertToBaseTen(numberToConvert, Integer.parseInt(oldBase));
             return BaseConvert.convertFromBaseTen(temp, Integer.parseInt(newBase));

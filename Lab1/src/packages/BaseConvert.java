@@ -50,7 +50,7 @@ public class BaseConvert {
             result = reverseString(result) +  ",";
             System.out.println("Converting the fractional part: ");
             System.out.print("|");
-            for(int i = 0; (i < 4) && (numberToConvertFractional != 0); i++){
+            for(int i = 0; (i < 5) && (numberToConvertFractional != 0); i++){
                 numberToConvertFractional *= newBase;
                 double fractionalPart = numberToConvertFractional % 1;
                 int integerPart = (int)(numberToConvertFractional - fractionalPart);
@@ -103,12 +103,12 @@ public class BaseConvert {
             int counter = -1;
             for (int i = indexO + 1; i < numberToConvert.length(); i++){
                 int CharAsBaseTenNumber = NUMBERS_AS_LETTERS.indexOf(numberToConvert.charAt(i));
-                System.out.printf(" %.2f |", CharAsBaseTenNumber * Math.pow(OldBase, counter));
+                System.out.printf(" %.4f |", CharAsBaseTenNumber * Math.pow(OldBase, counter));
                 result += CharAsBaseTenNumber * Math.pow(OldBase, counter);
                 counter--;
             }
             System.out.println();
-            System.out.printf("Result: %s\n", String.format("%.4f", result).replace(".", ","));
+            System.out.printf("Result: %s\n", String.format("%.5f", result).replace(".", ","));
             System.out.println("______________________________");
             return (Double.toString(result)).replace(".", ",");
         } else { //if not fractional
