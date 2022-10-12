@@ -21,6 +21,7 @@ public class InfLab {
     }
     public static void main(String args[]){
         Scanner scn = new Scanner(System.in);
+        System.out.print("Input Hamming code: ");
         String message = scn.nextLine();
         scn.close();
 
