@@ -28,26 +28,33 @@ print("-" * 120)
 
 #Task 1
 for i in range(0, 5):
-    print("Test ", i, " has ", len(
-            re.findall(r";-{\(", test1[i]) #Красиво?
-        ), " matches")
+    print("*" * 120)
+    print("Test", i, ": ")
+    print("Input:\n    ", test1[i])
+    print("Output:\n    There are ", len(re.findall(r";-{\(", test1[i])), " matches")
 
 
 print("-" * 120)
 
 #Task 2
 for i in range(0, 5):
+    print("*" * 120)
+    print("Test", i, ": ")
+    print("Input:\n    ", test2[i])
     regExResults = re.findall(r"\b(\w+)\s+\1\b", test2[i])
     for j in range(0, len(regExResults)):
         test2[i] = test2[i].replace(regExResults[j] + " ", "", 1)
-    print(test2[i])
+    print("Output:\n    ", test2[i])
 
 print("-" * 120)
 
 for i in range(0, 5):
+    print("*" * 120)
+    print("Test", i, ": ")
+    print("Input:\n    ", test2[i])
     regExResults = re.findall(r"\d+", test3[i])
     for j in range(0, len(regExResults)):
         test3[i] = test3[i].replace(regExResults[j], str(4 * int(regExResults[j]) ** 2 - 7))
-    print(test3[i])
+    print("Output:\n    ", test3[i])
     
 print("-" * 120)
