@@ -1,4 +1,5 @@
 import re
+import time
 
 def findSubstringBetween(text, cr1, cr2):
     return text[text.find(cr1)+1:text.find(cr2, text.find(cr1)+1)]
@@ -93,30 +94,40 @@ outputFilePath3 = './output3.yaml'
 
 #Own parser without regex
 
-inputFile = open(inputFilePath, 'r', encoding='utf8')
-outputFile = open(outputFilePath1, 'w', encoding='utf8')
-
-ownXMLtoYAMLparse(inputFile, outputFile)
-
-inputFile.close()
-outputFile.close()
+ownTime = time.time()
+for i in range(10):
+    inputFile = open(inputFilePath, 'r', encoding='utf8')
+    outputFile = open(outputFilePath1, 'w', encoding='utf8')
+    ownXMLtoYAMLparse(inputFile, outputFile)
+    inputFile.close()
+    outputFile.close()
+ownTime = time.time()-ownTime
 
 #Own parser with regex
 
-inputFile = open(inputFilePath, 'r', encoding='utf8')
-outputFile = open(outputFilePath2, 'w', encoding='utf8')
+ownTimeRE = time.time()
+for i in range(10):
+    inputFile = open(inputFilePath, 'r', encoding='utf8')
+    outputFile = open(outputFilePath2, 'w', encoding='utf8')
+    ownXMLtoYAMLparseRE(inputFile, outputFile)
+    inputFile.close()
+    outputFile.close()
+ownTimeRE = time.time()-ownTimeRE
 
-ownXMLtoYAMLparseRE(inputFile, outputFile)
-
-inputFile.close()
-outputFile.close()
 
 #Imported parser
 
 inputFile = open(inputFilePath, 'r', encoding='utf8')
 outputFile = open(outputFilePath3, 'w', encoding='utf8')
 
-importedXMLtoYAMLparse(inputFile, outputFile)
+importedTime = time.time()
+for i in range(10):
+    inputFile = open(inputFilePath, 'r', encoding='utf8')
+    outputFile = open(outputFilePath3, 'w', encoding='utf8')
+    importedXMLtoYAMLparse(inputFile, outputFile)
+    inputFile.close()
+    outputFile.close()
+importedTime = time.time() - importedTime
 
-inputFile.close()
-outputFile.close()
+
+print(f"Own time: {ownTime}\nOwn time with re: {ownTimeRE}\nImported time: {importedTime}")
