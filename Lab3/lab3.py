@@ -54,7 +54,7 @@ for i in range(0, 5):
     else:
         print("Input is not string")
 
-print("-" * 120)
+print("\n\n", "-" * 120, "\n\n")
 
 for i in range(0, 5):
     print("*" * 120)
