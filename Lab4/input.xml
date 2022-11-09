@@ -1,0 +1,24 @@
+<root>
+	<content>
+		<lecture>
+			<number>1</number>
+			<week>Четная неделя</week>
+			<time>11:40-13:10</time>	
+			<campus>Кронверский пр., д.49, лит.А</campus>
+			<classroom>2435/3 (бывш. 431б) ауд.</classroom>
+			<subject>Программирование(Лаб)</subject>
+			<teacher>Пашнин Александр Денисович</teacher>
+			<form>Очно - дистанционный</form>	
+		</lecture>		
+		<lecture>
+			<number>2</number>
+			<week>Четная неделя</week>
+			<time>11:40-13:10</time>
+			<campus>Кронверский пр., д.49, лит.А</campus>
+			<classroom>2435/3 (бывш. 431б) ауд.</classroom>
+			<subject>Программирование(Лаб)</subject>
+			<teacher>Пашнин Александр Денисович</teacher>
+			<form>Очно - дистанционный</form>
+		</lecture>
+	</content>
+</root>
